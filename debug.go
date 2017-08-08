@@ -1,4 +1,4 @@
-package lib
+package utilgo
 
 
 type Debugable interface {
