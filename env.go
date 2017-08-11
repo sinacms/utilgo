@@ -3,6 +3,7 @@ package utilgo
 import (
 	"os/exec"
 	"os"
+	"strings"
 )
 
 var instance *env
@@ -52,7 +53,7 @@ func (e *env) init()  {
 	if len(user) == 0 {
 		cmd := exec.Command("logname")
 		_user, _ := cmd.CombinedOutput()
-		e.user = string(_user)
+		e.user = strings.Trim(string(_user), "\n\r ")
 	}
 }
 
