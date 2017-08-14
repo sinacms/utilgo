@@ -2,7 +2,6 @@ package utilgo
 
 import (
 	"testing"
-	"sina.com.cn/comos/lib"
 	"time"
 	"fmt"
 	"sync"
@@ -12,7 +11,7 @@ func TestLogger_Init(t *testing.T)  {
 	//newFile(t)
 
 
-	logFile := new(lib.Logger).Init("/var/log/{APP}/{DATE}.log")
+	logFile := new(Logger).Init("/var/log/{APP}/{DATE}.log")
 	if _log := time.Now().Format("/var/log/lib.test/2006-01-02.log"); logFile != _log {
 		t.Fail()
 		t.Log("log not match", logFile, _log)
